@@ -6,6 +6,7 @@ function Button() {
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (e) => {
        setSelectedFile(e.target.files[0]);
+       document.getElementById("fileName").innerHTML = e.target.files[0].name;
     };
  
     const handleUpload = async () => {
@@ -16,7 +17,7 @@ function Button() {
  
        const formData = new FormData();
        formData.append("file", selectedFile);
- 
+       
        try {
           // Replace this URL with your server-side endpoint for handling file uploads
           const response = await fetch("https://your-upload-endpoint.com/upload", {
@@ -25,7 +26,7 @@ function Button() {
           });
  
           if (response.ok) {
-             document.getElementById("fileName").innerHTML = formData.get("file").name;
+             
           } else {
              alert("Failed to upload the file due to errors");
           }
