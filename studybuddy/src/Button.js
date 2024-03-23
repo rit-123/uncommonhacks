@@ -26,12 +26,10 @@ function Button() {
  
           if (response.ok) {
              document.getElementById("fileName").innerHTML = formData.get("file").name;
-             alert("File upload is successfully");
           } else {
              alert("Failed to upload the file due to errors");
           }
        } catch (error) {
-        document.getElementById("fileName").innerHTML = formData.get("file").name;
           console.error("Error while uploading the file:", error);
           alert("Error occurred while uploading the file");
        }
