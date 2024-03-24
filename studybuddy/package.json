@@ -1,4 +1,5 @@
 {
+  "proxy": "http://172.16.14.10:3000",
   "name": "studybuddy",
   "version": "0.1.0",
   "private": true,

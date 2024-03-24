@@ -20,7 +20,7 @@ function Button() {
        
        try {
           // Replace this URL with your server-side endpoint for handling file uploads
-          const response = await fetch("https://your-upload-endpoint.com/upload", {
+          const response = await fetch("/upload", {
              method: "POST",
              body: formData
           });
