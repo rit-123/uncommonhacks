@@ -1,6 +1,7 @@
 import React,  {useState} from 'react';
 import './Button.css';
 import ReactDOM from 'react-dom/client';
+import Notes from './Notes';
 
 
 function Button() {
