@@ -19,14 +19,14 @@ function Button() {
        formData.append("file", selectedFile);
        
        try {
-          // Replace this URL with your server-side endpoint for handling file uploads
           const response = await fetch("https://your-upload-endpoint.com/upload", {
              method: "POST",
              body: formData
           });
  
           if (response.ok) {
-             
+            const data = await response.json(); // This line is new
+            console.log(data);
           } else {
              alert("Failed to upload the file due to errors");
           }
