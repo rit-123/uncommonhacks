@@ -32,7 +32,7 @@ function Button() {
             console.log(data);
             ReactDOM.createRoot(document.getElementById('root')).render(
                <React.StrictMode>
-                  <Notes text={data}/>
+                  <Notes text={data.text}/>
                </React.StrictMode>
             );
           } else {
