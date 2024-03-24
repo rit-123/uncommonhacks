@@ -26,7 +26,8 @@ function Button() {
           });
  
           if (response.ok) {
-             
+            const data = await response.json(); // This line is new
+            console.log(data);
           } else {
              alert("Failed to upload the file due to errors");
           }

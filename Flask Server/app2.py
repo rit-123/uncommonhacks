@@ -13,7 +13,9 @@ def upload():
     if 'file' not in request.files:
         return 'No file part in the request', 400
     file = request.files['file']
-    return jsonify({"text": file.read()})
+    with open("temp.txt", "r") as f:
+        text=f.read()
+    return jsonify({"text": text})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=env.get("PORT", 3000)) 
+    app.run(host="0.0.0.0", port=env.get("PORT", 5000)) 
