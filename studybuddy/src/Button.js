@@ -1,5 +1,6 @@
 import React,  {useState} from 'react';
 import './Button.css';
+import ReactDOM from 'react-dom/client';
 
 
 function Button() {
@@ -25,8 +26,13 @@ function Button() {
           });
  
           if (response.ok) {
-            const data = await response.json(); // This line is new
+            const data = await response.json();
             console.log(data);
+            ReactDOM.createRoot(document.getElementById('root')).render(
+               <React.StrictMode>
+                  <Notes text={data}/>
+               </React.StrictMode>
+            );
           } else {
              alert("Failed to upload the file due to errors");
           }
